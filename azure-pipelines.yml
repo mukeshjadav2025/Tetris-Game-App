@@ -1,0 +1,22 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+pool:
+  name: Azure Pipelines
+steps:
+- task: Docker@0
+  displayName: 'Build an image'
+  inputs:
+    azureSubscription: 'Asfaq_Toward_MukeshJadav25@FreeTier'
+    azureContainerRegistry: '{"loginServer":"weumyacr.azurecr.io", "id" : "/subscriptions/f74b5957-ac12-438a-98c9-101c970bfee5/resourceGroups/weu-rg/providers/Microsoft.ContainerRegistry/registries/weumyacr"}'
+    imageName: 'tetris-game-app'
+
+- task: Docker@0
+  displayName: 'Push an image'
+  inputs:
+    azureSubscription: 'Asfaq_Toward_MukeshJadav25@FreeTier'
+    azureContainerRegistry: '{"loginServer":"weumyacr.azurecr.io", "id" : "/subscriptions/f74b5957-ac12-438a-98c9-101c970bfee5/resourceGroups/weu-rg/providers/Microsoft.ContainerRegistry/registries/weumyacr"}'
+    action: 'Push an image'
+    imageName: 'tetris-game-app'
