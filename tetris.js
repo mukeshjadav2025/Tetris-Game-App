@@ -215,7 +215,7 @@ function drawGame(){
 function drawPausedScreen(){
     context.fillStyle='#333'
     context.fillRect(0,0, canvas.width, canvas.height)
-    context.fillStyle='blue'
+    context.fillStyle='red'
     context.font = '32px Russo One';
     context.textAlign = "center";
     context.fillText("Paused", canvas.width /2, canvas.height /2)
